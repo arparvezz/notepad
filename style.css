@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+  --body-bg-color: #efefef;
+  --content-bg-color: #fff;
+  --content-color: #000;
+  --border-color: #efefef;
+  --btn-bg-color: #000;
+  --font-size: 16px;
+}
 *{
   margin: 0;
   padding: 0;
@@ -7,7 +15,7 @@
 }
 
 body{
-  background-color: #efefef;
+  background-color: var(--body-bg-color);
 }
 
 .container{
@@ -25,6 +33,7 @@ header .container{
 }
 header .container h4{
   font-weight: 400;
+  color: var(--content-color);
 }
 .font-controller{
   display: flex;
@@ -32,22 +41,52 @@ header .container h4{
   gap: 5px;
 }
 .font-controll-btn{
-  padding: 0 5px;
-  border: 1px solid #efefef;
-  background-color: aliceblue;
+  padding: 4px;
+  line-height: 0;
+  font-size: 26px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--content-bg-color);
+}
+.font-controll-btn svg{
+  color: var(--content-color);
 }
 textarea#note {
+  background-color: var(--content-bg-color);
+  color: var(--content-color);
   padding: 30px;
   width: 100%;
   max-height: 100%;
   height: 90vh;
-  border: 1px solid #efefef;
+  border: 1px solid var(--border-color);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  font-size: 16px;
+  font-size: var(--text-size);
   line-height: 20px;
   resize: none;
 }
 textarea#note:focus {
   outline: none;
   border: none;
+}
+
+.dark-mode-btn {
+  background: #000;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  line-height: 0;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+.dark-mode-btn svg {
+  color: #fff;
+}
+@media screen and (max-width: 700px){
+  textarea#note {
+    padding: 15px;
+  }
 }
